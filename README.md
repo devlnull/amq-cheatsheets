@@ -45,6 +45,8 @@ What you get:
 | `cs` on your PATH | `cs search "cmd shift o"`, `cs open git`, `cs new …` |
 | `~/Cheatsheets/raycast/` | Raycast Script Commands. **One manual step** (Raycast has no API for it): Settings → Extensions → Script Commands → *Add Directories* → that folder. The installer copies the path to your clipboard. |
 
+One-liner: `curl -fsSL https://raw.githubusercontent.com/devlnull/amq-cheatsheets/main/get.sh | bash`
+
 Uninstall: `~/Cheatsheets/install.sh --uninstall` (add `--purge` to delete the library too).
 
 ## Release (maintainers)
@@ -53,7 +55,7 @@ Uninstall: `~/Cheatsheets/install.sh --uninstall` (add `--purge` to delete the l
 echo 0.2.0 > VERSION
 ./packaging/build_release.sh      # tests, then dist/{*.pkg,*.tar.gz,SHA256SUMS}
 ```
-Attach the three files to a GitHub release (`gh release create v0.2.0 dist/*`). To avoid the Gatekeeper prompt, sign with
+Then `git tag v0.2.0 && git push --tags`: the *Release* workflow rebuilds and publishes the files to GitHub Releases automatically (the tag must equal VERSION). To avoid the Gatekeeper prompt, sign with
 an Apple *Developer ID Installer* certificate: `SIGN_ID="Developer ID Installer: Name (TEAMID)" ./packaging/build_release.sh`
 (then notarize with `xcrun notarytool`).
 

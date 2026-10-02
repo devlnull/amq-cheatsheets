@@ -1,0 +1,13 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s tests -v
+      - run: ./cs build --no-spotlight && git diff --exit-code -- db/cheatsheets.jsonl sheets raycast README.md
+        # fails if generated files (db, md, raycast scripts, README table) are out of date: run `./cs build` and commit
