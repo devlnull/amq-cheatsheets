@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "amq-cheatsheets sheet",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "category",
+    "tags",
+    "sections"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Slug. Must equal the folder name under sheets/."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "description": "Broad bucket, e.g. IDE, Shell, VCS, OS, Language, DevOps."
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "description": "Lowercase kebab-case. Searchable and used as Finder tags."
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other names people search by (nicknames, abbreviations, misspellings)."
+    },
+    "description": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string",
+      "description": "macOS, Linux, Windows, cross-platform..."
+    },
+    "image": {
+      "type": "string",
+      "description": "Image file in the same folder (png/jpg/pdf)."
+    },
+    "source": {
+      "type": "string",
+      "description": "Where the content came from / which version it is valid for."
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "entries"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "action"
+              ],
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "keys": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Alternative chords, e.g. [\"cmd+shift+o\"]. Modifiers: ctrl opt shift cmd. Keys: letters, f1-f12, enter, backspace, space, up, down, left, right, tab, esc, click, or a symbol."
+                },
+                "note": {
+                  "type": "string"
+                },
+                "check": {
+                  "type": "string",
+                  "description": "Set when the source image disagrees with the official default; explains the doubt."
+                },
+                "command": {
+                  "type": "string",
+                  "description": "Shell/CLI command, for sheets that are not about key chords (e.g. git). Searchable."
+                }
+              }
+            }
+          },
+          "color": {
+            "type": "string",
+            "description": "CSS color for the card in the rendered image (tools/render_sheet.py)."
+          },
+          "icon": {
+            "type": "string",
+            "description": "Emoji shown in the card header of the rendered image."
+          }
+        }
+      }
+    },
+    "tips": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "render": {
+      "type": "object",
+      "description": "Options for tools/render_sheet.py (subtitle, tagline, logo, layout e.g. [2,3,3], footer_tips, footer_note, footer_sign)."
+    }
+  }
+}

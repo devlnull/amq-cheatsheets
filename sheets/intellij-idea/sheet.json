@@ -1,0 +1,143 @@
+{
+  "$schema": "../../schema/sheet.schema.json",
+  "id": "intellij-idea",
+  "title": "IntelliJ IDEA macOS Shortcuts",
+  "category": "IDE",
+  "tags": ["intellij", "idea", "jetbrains", "ide", "shortcuts", "keyboard", "hotkeys", "keymap", "macos", "navigation", "editing", "refactoring", "debugging", "git", "vcs", "productivity", "java", "kotlin"],
+  "aliases": ["intellij idea", "idea ultimate", "idea community", "jetbrains ide", "intelij", "inteliJ"],
+  "description": "The most useful editor, navigation and productivity shortcuts for IntelliJ IDEA on macOS: navigation, editing, code insights, build & run, Git, search & selection, window management.",
+  "platform": "macOS",
+  "image": "intellij-idea.png",
+  "source": "Own cheatsheet image (IntelliJ_IDEA.png), transcribed 2026-10-02",
+  "created": "2026-10-02",
+  "updated": "2026-10-02",
+  "sections": [
+    {
+      "name": "Navigation",
+      "entries": [
+        { "action": "Find class, file, symbol", "keys": ["cmd+t"] },
+        { "action": "Go to file by name", "keys": ["cmd+shift+o"], "note": "recent files" },
+        { "action": "Go to symbol", "keys": ["cmd+opt+o"], "note": "method, field, etc." },
+        { "action": "Go to implementation", "keys": ["cmd+opt+b"] },
+        { "action": "Go to declaration", "keys": ["cmd+b"] },
+        { "action": "Go to type", "keys": ["cmd+shift+b"], "note": "class" },
+        { "action": "Go to usages", "keys": ["opt+f7"] },
+        { "action": "Find in path", "keys": ["cmd+shift+f"], "note": "project-wide" },
+        { "action": "Navigate back / forward", "keys": ["cmd+[", "cmd+]"] },
+        { "action": "Recent locations", "keys": ["cmd+e"] },
+        { "action": "Search everywhere", "keys": ["shift+shift"], "note": "double tap" },
+        { "action": "Open structure", "keys": ["cmd+f12"], "note": "class members" }
+      ]
+    },
+    {
+      "name": "Editing",
+      "entries": [
+        { "action": "Rename", "keys": ["cmd+r"], "check": "JetBrains default keymap uses shift+f6 for Rename; cmd+r is Replace in file." },
+        { "action": "Refactor", "keys": ["cmd+opt+t"], "note": "context menu", "check": "JetBrains default keymap uses ctrl+t for Refactor This; cmd+opt+t is Surround With." },
+        { "action": "Quick fix", "keys": ["opt+enter"] },
+        { "action": "Comment / Uncomment", "keys": ["cmd+/"] },
+        { "action": "Toggle line comment", "keys": ["cmd+shift+/"] },
+        { "action": "Reformat code", "keys": ["cmd+opt+l"] },
+        { "action": "Optimize imports", "keys": ["ctrl+opt+o"] },
+        { "action": "Surround with", "keys": ["cmd+opt+t"], "note": "if, try/catch, etc." },
+        { "action": "Auto-complete", "keys": ["ctrl+space"] },
+        { "action": "Smart type completion", "keys": ["ctrl+shift+space"] },
+        { "action": "Duplicate line / selection", "keys": ["cmd+d"] },
+        { "action": "Delete line", "keys": ["cmd+backspace"] },
+        { "action": "Move line up / down", "keys": ["opt+shift+up", "opt+shift+down"] }
+      ]
+    },
+    {
+      "name": "Code Insights & Analysis",
+      "entries": [
+        { "action": "Show quick documentation", "keys": ["f1"] },
+        { "action": "Parameter info", "keys": ["cmd+p"] },
+        { "action": "Show method/variable type", "keys": ["opt+shift+p"] },
+        { "action": "Find usages", "keys": ["opt+f7"] },
+        { "action": "Evaluate expression", "keys": ["opt+f8"], "note": "debug" },
+        { "action": "Run to cursor", "keys": ["ctrl+f9"] },
+        { "action": "Show context actions", "keys": ["ctrl+cmd+1"] },
+        { "action": "Inspect code", "keys": ["opt+cmd+i"], "note": "lint" }
+      ]
+    },
+    {
+      "name": "Build & Run",
+      "entries": [
+        { "action": "Build project", "keys": ["cmd+f9"] },
+        { "action": "Rebuild project", "keys": ["shift+cmd+f9"] },
+        { "action": "Run", "keys": ["ctrl+r"] },
+        { "action": "Debug", "keys": ["ctrl+d"] },
+        { "action": "Run with coverage", "keys": ["ctrl+opt+f10"] },
+        { "action": "Stop", "keys": ["cmd+f2"] },
+        { "action": "Rerun", "keys": ["ctrl+r"], "check": "JetBrains default keymap uses cmd+r for Rerun." },
+        { "action": "Select configuration", "keys": ["ctrl+opt+s"] },
+        { "action": "Edit configurations", "keys": ["opt+cmd+,"] }
+      ]
+    },
+    {
+      "name": "Version Control (Git)",
+      "entries": [
+        { "action": "Commit", "keys": ["cmd+k"] },
+        { "action": "Push", "keys": ["cmd+shift+k"] },
+        { "action": "Pull", "keys": ["cmd+shift+x"] },
+        { "action": "Show changes", "keys": ["cmd+9"] },
+        { "action": "History", "keys": ["cmd+7"] },
+        { "action": "Diff with previous", "keys": ["cmd+d"] },
+        { "action": "Merge tool", "keys": ["cmd+shift+m"] },
+        { "action": "Branches", "keys": ["cmd+`"] },
+        { "action": "Stash", "keys": ["cmd+shift+s"] }
+      ]
+    },
+    {
+      "name": "Search & Selection",
+      "entries": [
+        { "action": "Find in files", "keys": ["shift+cmd+f"] },
+        { "action": "Replace in files", "keys": ["shift+cmd+r"] },
+        { "action": "Find usage", "keys": ["opt+f7"], "note": "current file" },
+        { "action": "Find next / previous", "keys": ["cmd+g", "shift+cmd+g"] },
+        { "action": "Select all", "keys": ["cmd+a"] },
+        { "action": "Select word", "keys": ["cmd+w"] },
+        { "action": "Select line", "keys": ["cmd+l"] },
+        { "action": "Extend selection", "keys": ["opt+up", "opt+down"] },
+        { "action": "Shrink selection", "keys": ["opt+shift+up", "opt+shift+down"] },
+        { "action": "Add multiple carets", "keys": ["opt+click"] }
+      ]
+    },
+    {
+      "name": "Window & View",
+      "entries": [
+        { "action": "Project tool window", "keys": ["cmd+1"] },
+        { "action": "Favorites", "keys": ["cmd+2"] },
+        { "action": "Run tool window", "keys": ["cmd+4"] },
+        { "action": "Debug tool window", "keys": ["cmd+5"] },
+        { "action": "Terminal", "keys": ["cmd+6"] },
+        { "action": "Problems", "keys": ["cmd+8"] },
+        { "action": "Structure", "keys": ["cmd+f12"] },
+        { "action": "Hide tool windows", "keys": ["cmd+shift+f12"] },
+        { "action": "Split editor", "keys": ["cmd+left", "cmd+right"] },
+        { "action": "Close active tab", "keys": ["cmd+w"] }
+      ]
+    },
+    {
+      "name": "Other Useful Shortcuts",
+      "entries": [
+        { "action": "Open settings/preferences", "keys": ["cmd+,"] },
+        { "action": "Search action", "keys": ["shift+cmd+a"] },
+        { "action": "VCS log", "keys": ["cmd+9"] },
+        { "action": "Show recent changes", "keys": ["cmd+0"] },
+        { "action": "File path / copy path", "keys": ["cmd+shift+c"] },
+        { "action": "Move to another tab", "keys": ["cmd+shift+]", "cmd+shift+["] },
+        { "action": "Bookmark", "keys": ["f11"] },
+        { "action": "Toggle bookmark", "keys": ["cmd+f11"] },
+        { "action": "Next / previous bookmark", "keys": ["opt+f11", "shift+f11"] },
+        { "action": "Open help", "keys": ["f1"] }
+      ]
+    }
+  ],
+  "tips": [
+    "Use Command (cmd) instead of Ctrl on macOS.",
+    "Hold Control (ctrl) for extra options in many shortcuts.",
+    "You can customize shortcuts in: IntelliJ IDEA > Settings > Keymap.",
+    "You don't need to memorize them all. Start with the ones you use most, and build from there."
+  ]
+}

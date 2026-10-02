@@ -1,0 +1,11 @@
+#!/bin/bash
+# Runs as root after the .pkg payload lands in /usr/local/share/amq-cheatsheets.
+# The real work is per-user (files in ~/Cheatsheets, ~/Applications), so hand over to the logged-in user.
+PAYLOAD="/usr/local/share/amq-cheatsheets"
+USER_NAME="$(stat -f%Su /dev/console)"
+if [ -z "$USER_NAME" ] || [ "$USER_NAME" = "root" ]; then
+  echo "No console user; run $PAYLOAD/install.sh later as your user." ; exit 0
+fi
+USER_HOME="$(dscl . -read "/Users/$USER_NAME" NFSHomeDirectory | awk '{print $2}')"
+sudo -u "$USER_NAME" -H env HOME="$USER_HOME" "$PAYLOAD/install.sh" --quiet >/tmp/amq-cheatsheets-install.log 2>&1
+exit 0

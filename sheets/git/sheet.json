@@ -1,0 +1,436 @@
+{
+  "$schema": "../../schema/sheet.schema.json",
+  "id": "git",
+  "title": "Git Essential Commands",
+  "category": "VCS",
+  "tags": [
+    "git",
+    "vcs",
+    "version-control",
+    "source-control",
+    "cli",
+    "terminal",
+    "commands",
+    "commit",
+    "branch",
+    "merge",
+    "rebase",
+    "stash",
+    "reset",
+    "revert",
+    "cherry-pick",
+    "remote",
+    "github",
+    "gitlab",
+    "cheatsheet"
+  ],
+  "aliases": [
+    "git cheat sheet",
+    "git commands",
+    "git cheatsheet",
+    "github",
+    "gitlab",
+    "source control",
+    "git basics"
+  ],
+  "description": "Essential Git commands for everyday work: stage & commit, branching, merge & rebase, remotes, inspecting history, undoing mistakes, stash & tags, and config.",
+  "platform": "cross-platform",
+  "image": "git.png",
+  "source": "Generated from this file by tools/render_sheet.py; commands valid for Git 2.23+ (git switch / git restore).",
+  "created": "2026-10-02",
+  "updated": "2026-10-02",
+  "render": {
+    "subtitle": "Essential Commands Cheat Sheet",
+    "tagline": "Commit often.|Merge wisely.",
+    "logo": "git",
+    "layout": [
+      2,
+      3,
+      3
+    ],
+    "intro": "The commands you reach for every day: commit, branch, merge,|rebase, sync, undo and inspect.",
+    "footer_note": "You don't need to memorize them all.|Learn the ones you use daily,|and look up the rest.",
+    "footer_sign": "Happy|Committing!",
+    "footer_tips": [
+      "Use git switch / git restore instead of git checkout.",
+      "Prefer --force-with-lease over --force.",
+      "git reflog can recover almost any lost commit."
+    ]
+  },
+  "sections": [
+    {
+      "name": "Stage & Commit",
+      "color": "#1e7bf0",
+      "icon": "🗂",
+      "entries": [
+        {
+          "action": "Stage file",
+          "command": "git add <file>"
+        },
+        {
+          "action": "Stage all changes",
+          "command": "git add -A"
+        },
+        {
+          "action": "Stage interactively",
+          "command": "git add -p",
+          "note": "hunk by hunk"
+        },
+        {
+          "action": "Commit staged",
+          "command": "git commit -m \"msg\""
+        },
+        {
+          "action": "Stage tracked + commit",
+          "command": "git commit -am \"msg\""
+        },
+        {
+          "action": "Amend last commit",
+          "command": "git commit --amend"
+        },
+        {
+          "action": "Amend, keep message",
+          "command": "git commit --amend --no-edit"
+        },
+        {
+          "action": "Unstage file",
+          "command": "git restore --staged <file>"
+        },
+        {
+          "action": "Discard file changes",
+          "command": "git restore <file>"
+        },
+        {
+          "action": "Short status",
+          "command": "git status -sb"
+        },
+        {
+          "action": "Remove & untrack file",
+          "command": "git rm <file>"
+        },
+        {
+          "action": "Rename / move file",
+          "command": "git mv <old> <new>"
+        }
+      ]
+    },
+    {
+      "name": "Branching",
+      "color": "#2da44e",
+      "icon": "🌿",
+      "entries": [
+        {
+          "action": "List branches",
+          "command": "git branch -vv",
+          "note": "with upstream"
+        },
+        {
+          "action": "New branch",
+          "command": "git branch <name>"
+        },
+        {
+          "action": "New branch & switch",
+          "command": "git switch -c <name>"
+        },
+        {
+          "action": "Switch branch",
+          "command": "git switch <name>"
+        },
+        {
+          "action": "Previous branch",
+          "command": "git switch -"
+        },
+        {
+          "action": "Rename branch",
+          "command": "git branch -m <new>"
+        },
+        {
+          "action": "Delete branch (merged)",
+          "command": "git branch -d <name>"
+        },
+        {
+          "action": "Force delete branch",
+          "command": "git branch -D <name>"
+        },
+        {
+          "action": "Delete remote branch",
+          "command": "git push origin --delete <name>"
+        },
+        {
+          "action": "Branch from commit/tag",
+          "command": "git switch -c <name> <ref>"
+        },
+        {
+          "action": "List merged branches",
+          "command": "git branch --merged"
+        },
+        {
+          "action": "Track remote branch",
+          "command": "git switch --track origin/<name>"
+        }
+      ]
+    },
+    {
+      "name": "Merge & Rebase",
+      "color": "#8b5cf6",
+      "icon": "🔀",
+      "entries": [
+        {
+          "action": "Merge branch",
+          "command": "git merge <branch>"
+        },
+        {
+          "action": "Merge, no fast-forward",
+          "command": "git merge --no-ff <branch>"
+        },
+        {
+          "action": "Squash merge",
+          "command": "git merge --squash <branch>"
+        },
+        {
+          "action": "Abort merge",
+          "command": "git merge --abort"
+        },
+        {
+          "action": "Rebase onto branch",
+          "command": "git rebase <branch>"
+        },
+        {
+          "action": "Interactive rebase",
+          "command": "git rebase -i HEAD~3",
+          "note": "last 3 commits"
+        },
+        {
+          "action": "Continue / abort rebase",
+          "command": "git rebase --continue",
+          "note": "or --abort"
+        },
+        {
+          "action": "Cherry-pick commit",
+          "command": "git cherry-pick <sha>"
+        }
+      ]
+    },
+    {
+      "name": "Remote & Sync",
+      "color": "#e5484d",
+      "icon": "☁️",
+      "entries": [
+        {
+          "action": "Clone repo",
+          "command": "git clone <url>"
+        },
+        {
+          "action": "Show remotes",
+          "command": "git remote -v"
+        },
+        {
+          "action": "Add remote",
+          "command": "git remote add origin <url>"
+        },
+        {
+          "action": "Fetch all + prune",
+          "command": "git fetch --all --prune"
+        },
+        {
+          "action": "Pull with rebase",
+          "command": "git pull --rebase"
+        },
+        {
+          "action": "Push",
+          "command": "git push"
+        },
+        {
+          "action": "Push new branch",
+          "command": "git push -u origin <branch>"
+        },
+        {
+          "action": "Safer force push",
+          "command": "git push --force-with-lease"
+        },
+        {
+          "action": "Push tags",
+          "command": "git push --tags"
+        }
+      ]
+    },
+    {
+      "name": "Inspect & Compare",
+      "color": "#0891b2",
+      "icon": "🔍",
+      "entries": [
+        {
+          "action": "Compact log graph",
+          "command": "git log --oneline --graph --decorate"
+        },
+        {
+          "action": "Last N commits",
+          "command": "git log -n 5"
+        },
+        {
+          "action": "File history",
+          "command": "git log -p -- <file>"
+        },
+        {
+          "action": "Diff unstaged",
+          "command": "git diff"
+        },
+        {
+          "action": "Diff staged",
+          "command": "git diff --staged"
+        },
+        {
+          "action": "Diff two branches",
+          "command": "git diff main..feature"
+        },
+        {
+          "action": "Show a commit",
+          "command": "git show <sha>"
+        },
+        {
+          "action": "Who changed a line",
+          "command": "git blame <file>"
+        },
+        {
+          "action": "Find the bad commit",
+          "command": "git bisect start"
+        }
+      ]
+    },
+    {
+      "name": "Undo & Fix",
+      "color": "#f97316",
+      "icon": "↩️",
+      "entries": [
+        {
+          "action": "Undo last commit, keep staged",
+          "command": "git reset --soft HEAD~1"
+        },
+        {
+          "action": "Undo last commit, keep changes",
+          "command": "git reset HEAD~1"
+        },
+        {
+          "action": "Discard last commit & changes",
+          "command": "git reset --hard HEAD~1",
+          "note": "destructive"
+        },
+        {
+          "action": "Revert commit safely",
+          "command": "git revert <sha>",
+          "note": "new commit"
+        },
+        {
+          "action": "Match remote exactly",
+          "command": "git reset --hard origin/<branch>",
+          "note": "destructive"
+        },
+        {
+          "action": "Recover lost commits",
+          "command": "git reflog"
+        },
+        {
+          "action": "Delete untracked files",
+          "command": "git clean -fd",
+          "note": "dry run: -n"
+        },
+        {
+          "action": "Restore file from commit",
+          "command": "git restore --source=<sha> <file>"
+        }
+      ]
+    },
+    {
+      "name": "Stash & Tags",
+      "color": "#a855f7",
+      "icon": "📦",
+      "entries": [
+        {
+          "action": "Stash changes",
+          "command": "git stash"
+        },
+        {
+          "action": "Stash incl. untracked",
+          "command": "git stash -u"
+        },
+        {
+          "action": "List stashes",
+          "command": "git stash list"
+        },
+        {
+          "action": "Apply latest stash",
+          "command": "git stash apply"
+        },
+        {
+          "action": "Pop latest stash",
+          "command": "git stash pop"
+        },
+        {
+          "action": "Drop stash",
+          "command": "git stash drop"
+        },
+        {
+          "action": "Create tag",
+          "command": "git tag <name>"
+        },
+        {
+          "action": "Annotated tag",
+          "command": "git tag -a v1.0 -m \"msg\""
+        },
+        {
+          "action": "List tags",
+          "command": "git tag -l"
+        }
+      ]
+    },
+    {
+      "name": "Setup & Config",
+      "color": "#64748b",
+      "icon": "⚙️",
+      "entries": [
+        {
+          "action": "Init repo",
+          "command": "git init"
+        },
+        {
+          "action": "Set name",
+          "command": "git config --global user.name \"Me\""
+        },
+        {
+          "action": "Set email",
+          "command": "git config --global user.email \"me@x.io\""
+        },
+        {
+          "action": "Init with branch name",
+          "command": "git init -b main"
+        },
+        {
+          "action": "Set editor",
+          "command": "git config --global core.editor vim"
+        },
+        {
+          "action": "Always pull --rebase",
+          "command": "git config --global pull.rebase true"
+        },
+        {
+          "action": "Create alias",
+          "command": "git config --global alias.st status"
+        },
+        {
+          "action": "Show all config",
+          "command": "git config --list --show-origin"
+        },
+        {
+          "action": "Stop tracking ignored file",
+          "command": "git rm --cached <file>"
+        }
+      ]
+    }
+  ],
+  "tips": [
+    "Prefer git switch / git restore (Git 2.23+) over the overloaded git checkout.",
+    "Use --force-with-lease instead of --force when you must rewrite remote history.",
+    "git reflog remembers almost everything: a commit is rarely truly lost.",
+    "Replace <placeholders> with your own value; --global writes to ~/.gitconfig."
+  ]
+}
